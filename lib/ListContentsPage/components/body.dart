@@ -93,143 +93,142 @@ class Body extends StatelessWidget {
                     flex: 9,
                     child: Container(
                         child: ListView.separated(
-                          itemCount: entries.length,
-                          itemBuilder: (BuildContext context, int index) {
-                            return Container(
-                                height: 160,
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  border: Border.all(
-                                    color: Colors.black,
-                                  ),
-                                  borderRadius: BorderRadius.circular(12),
-                                ),
-                                child: Padding(
-                                  padding: const EdgeInsets.only(left: 10, right: 10),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        height: 30,
-                                        child: Row(
-                                          children: [
-                                            Expanded(
-                                              flex: 4,
-                                              child: Padding(
-                                                padding: const EdgeInsets.only(right: 40.0),
-                                                child: Container(
-                                                  child: Row(
-                                                    children: [
-                                                      Expanded(
-                                                        child: Container(
-                                                          child: Text(
-                                                            '#News',
-                                                            style: TextStyle(
-                                                              color: Colors.lightBlueAccent
-                                                            ),
-                                                          ),
-                                                        ),
+                      itemCount: entries.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Container(
+                            height: 160,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              border: Border.all(
+                                color: Colors.black,
+                              ),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.only(left: 10, right: 10),
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 30,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          flex: 4,
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                right: 40.0),
+                                            child: Container(
+                                              child: Row(
+                                                children: [
+                                                  Expanded(
+                                                    child: Container(
+                                                      child: Text(
+                                                        '#News',
+                                                        style: TextStyle(
+                                                            color: Colors
+                                                                .lightBlueAccent),
                                                       ),
-                                                      Expanded(
-                                                        child: Container(
-                                                          child: Text(
-                                                              '#News',
-                                                            style: TextStyle(
-                                                                color: Colors.lightBlueAccent
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      ),
-                                                      Expanded(
-                                                        child: Container(
-                                                          child: Text(
-                                                              '#News',
-                                                            style: TextStyle(
-                                                                color: Colors.lightBlueAccent
-                                                            ),
-                                                          ),
-                                                        ),
-                                                      )
-                                                    ],
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              flex: 1,
-                                              child: Container(
-                                                child: Text(
-                                                  '750000',
-                                                    style: TextStyle(
-                                                    color: Colors.blueAccent,
-                                                      fontSize: 18
-                                                ),
-                                                ),
-                                              ),
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 50,
-                                        child: Text(
-                                          'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
-                                          style: TextStyle(
-                                            fontSize: 23
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 20,
-                                        child: Text(
-                                          'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-                                          overflow: TextOverflow.ellipsis,
-                                          style: TextStyle(
-                                              color: Colors.grey
-                                          ),
-                                        ),
-                                      ),
-                                      Container(
-                                        height: 50,
-                                        child: Row(
-                                          children: [
-                                            Expanded(
-                                              flex: 2,
-                                              child: Container(
-                                                child: Text(
-                                                  'Created at 21:40 | 27/10/2020'
-                                                ),
-                                              ),
-                                            ),
-                                            Expanded(
-                                              child: Padding(
-                                                padding: const EdgeInsets.only(left: 20.0, right: 5),
-                                                child: Container(
-                                                  child: FlatButton(
-                                                    onPressed: () {
-                                                      Navigator.push(context,
-                                                          MaterialPageRoute(builder: (context) {
-                                                            return PostDetailScreen();
-                                                          }));
-                                                    },
-                                                    child: Text(
-                                                      'Preview',
-                                                      style: TextStyle(color: Colors.white),
                                                     ),
-                                                    color: Colors.blue,
                                                   ),
-                                                ),
+                                                  Expanded(
+                                                    child: Container(
+                                                      child: Text(
+                                                        '#News',
+                                                        style: TextStyle(
+                                                            color: Colors
+                                                                .lightBlueAccent),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Expanded(
+                                                    child: Container(
+                                                      child: Text(
+                                                        '#News',
+                                                        style: TextStyle(
+                                                            color: Colors
+                                                                .lightBlueAccent),
+                                                      ),
+                                                    ),
+                                                  )
+                                                ],
                                               ),
-                                            )
-                                          ],
+                                            ),
+                                          ),
                                         ),
-                                      )
-                                    ],
+                                        Expanded(
+                                          flex: 1,
+                                          child: Container(
+                                            child: Text(
+                                              '750000',
+                                              style: TextStyle(
+                                                  color: Colors.blueAccent,
+                                                  fontSize: 18),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
                                   ),
-                                ));
-                          },
-                          separatorBuilder: (BuildContext context, int index) =>
-                              const Divider(),
-                        )),
+                                  Container(
+                                    height: 50,
+                                    child: Text(
+                                      'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA',
+                                      style: TextStyle(fontSize: 23),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 20,
+                                    child: Text(
+                                      'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+                                      overflow: TextOverflow.ellipsis,
+                                      style: TextStyle(color: Colors.grey),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 50,
+                                    child: Row(
+                                      children: [
+                                        Expanded(
+                                          flex: 2,
+                                          child: Container(
+                                            child: Text(
+                                                'Created at 21:40 | 27/10/2020'),
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Padding(
+                                            padding: const EdgeInsets.only(
+                                                left: 20.0, right: 5),
+                                            child: Container(
+                                              child: FlatButton(
+                                                onPressed: () {
+                                                  Navigator.push(context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) {
+                                                    return PostDetailScreen();
+                                                  }));
+                                                },
+                                                child: Text(
+                                                  'Preview',
+                                                  style: TextStyle(
+                                                      color: Colors.white),
+                                                ),
+                                                color: Colors.blue,
+                                              ),
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ));
+                      },
+                      separatorBuilder: (BuildContext context, int index) =>
+                          const Divider(),
+                    )),
                   )
                 ],
               )),
