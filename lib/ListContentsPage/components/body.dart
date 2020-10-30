@@ -40,7 +40,6 @@ class Body extends StatelessWidget {
     return listWriter;
   }
 
-
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -228,14 +227,18 @@ class Body extends StatelessWidget {
                                         ),
                                         Container(
                                           height: 20,
-                                          child:  snapshot.data[index].description != null ?
-                                          Text(
-                                            snapshot.data[index].description,
-                                            overflow: TextOverflow.ellipsis,
-                                            style:
-                                                TextStyle(color: Colors.grey),
-                                          ) : Text("Không có mô tả")
-                                          ,
+                                          child: snapshot.data[index]
+                                                      .description !=
+                                                  null
+                                              ? Text(
+                                                  snapshot
+                                                      .data[index].description,
+                                                  overflow:
+                                                      TextOverflow.ellipsis,
+                                                  style: TextStyle(
+                                                      color: Colors.grey),
+                                                )
+                                              : Text("Không có mô tả"),
                                         ),
                                         Container(
                                           height: 50,
@@ -244,15 +247,32 @@ class Body extends StatelessWidget {
                                               Expanded(
                                                 flex: 2,
                                                 child: Container(
-                                                  child: snapshot.data[index].createdDate != null ?
-                                                  Text(
-                                                      'Created at '+ snapshot.data[index].createdDate.substring(11,13)
-                                                          +":" + snapshot.data[index].createdDate.substring(14,16)
-                                                          +" | "+ snapshot.data[index].createdDate.substring(8,10)
-                                                          +"/" + snapshot.data[index].createdDate.substring(5,7)
-                                                          +"/" + snapshot.data[index].createdDate.substring(0,4)
-                                                  )
-                                                  : Text("Created at 21:40 | 27/10/2020"),
+                                                  child: snapshot.data[index].createdDate !=
+                                                          null
+                                                      ? Text('Created at ' +
+                                                          snapshot.data[index]
+                                                              .createdDate
+                                                              .substring(
+                                                                  11, 13) +
+                                                          ":" +
+                                                          snapshot.data[index]
+                                                              .createdDate
+                                                              .substring(
+                                                                  14, 16) +
+                                                          " | " +
+                                                          snapshot.data[index]
+                                                              .createdDate
+                                                              .substring(
+                                                                  8, 10) +
+                                                          "/" +
+                                                          snapshot.data[index]
+                                                              .createdDate
+                                                              .substring(5, 7) +
+                                                          "/" +
+                                                          snapshot.data[index]
+                                                              .createdDate
+                                                              .substring(0, 4))
+                                                      : Text("Created at 21:40 | 27/10/2020"),
                                                 ),
                                               ),
                                               Expanded(
@@ -264,9 +284,11 @@ class Body extends StatelessWidget {
                                                     child: FlatButton(
                                                       onPressed: () {
                                                         Navigator.push(context,
-                                                            MaterialPageRoute(builder: (context) {
-                                                              return PostDetailScreen();
-                                                            }));
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) {
+                                                          return PostDetailScreen();
+                                                        }));
                                                       },
                                                       child: Text(
                                                         'Preview',
@@ -274,7 +296,6 @@ class Body extends StatelessWidget {
                                                             color:
                                                                 Colors.white),
                                                       ),
-                                                      color: Colors.blue,
                                                     ),
                                                   ),
                                                 ),
