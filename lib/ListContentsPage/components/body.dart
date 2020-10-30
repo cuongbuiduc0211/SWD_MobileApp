@@ -40,9 +40,6 @@ class Body extends StatelessWidget {
     return listWriter;
   }
 
-  String handleDate(String dateStr) {
-    dateStr.substring(0,4);
-  }
 
   @override
   Widget build(BuildContext context) {
