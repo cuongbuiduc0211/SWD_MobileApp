@@ -277,24 +277,18 @@ class Body extends StatelessWidget {
                                               ),
                                               Expanded(
                                                 child: Padding(
-                                                  padding:
-                                                      const EdgeInsets.only(
-                                                          left: 20.0, right: 5),
+                                                  padding: const EdgeInsets.only(left: 20.0, right: 5),
                                                   child: Container(
                                                     child: FlatButton(
                                                       onPressed: () {
                                                         Navigator.push(context,
-                                                            MaterialPageRoute(
-                                                                builder:
-                                                                    (context) {
-                                                          return PostDetailScreen();
-                                                        }));
+                                                            MaterialPageRoute(builder: (context) {
+                                                              return PostDetailScreen();
+                                                            }));
                                                       },
                                                       child: Text(
                                                         'Preview',
-                                                        style: TextStyle(
-                                                            color:
-                                                                Colors.white),
+                                                        style: TextStyle(color: Colors.white),
                                                       ),
                                                     ),
                                                   ),
