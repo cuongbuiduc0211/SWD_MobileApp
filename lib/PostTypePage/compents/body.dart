@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mobileapp/InfoPage/info_screen.dart';
 import 'package:mobileapp/ListContentsPage/listcontents_screen.dart';
+import 'package:mobileapp/Models/user_login.dart';
 import 'package:mobileapp/components/posting_type.dart';
 
 class Body extends StatelessWidget {
+
+  UserLogin userLogin;
+  Body({Key key, this.userLogin}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -21,11 +26,11 @@ class Body extends StatelessWidget {
               alignment: Alignment.centerRight,
               padding: const EdgeInsets.fromLTRB(0.0, 4.0, 0.0, 0.0),
               child: ListTile(
-                leading: Image.asset(
-                  'assets/images/avt.png',
+                leading: CircleAvatar(
+                  backgroundImage: NetworkImage(userLogin.photoUrl),
                 ),
                 title: Text(
-                  'Trần Trọng Tuấn',
+                  userLogin.displayName,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                 ),
                 subtitle: Text('Xin chào!'),
@@ -63,7 +68,7 @@ class Body extends StatelessWidget {
                       press: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                              return ListContentsScreen();
+                              return ListContentsScreen(userLogin: userLogin,);
                             }));
                       },
                     ),

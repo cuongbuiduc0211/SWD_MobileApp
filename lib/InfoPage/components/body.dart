@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:mobileapp/LoginPage/components/body.dart';
 import 'package:mobileapp/LoginPage/login_screen.dart';
 import 'package:mobileapp/MainPage/main_screen.dart';
+import 'package:mobileapp/Models/user_login.dart';
 import 'package:mobileapp/components/rounded_button.dart';
 import 'package:mobileapp/constants.dart';
 
 class Body extends StatelessWidget {
-  const Body({
-    Key key,
+  UserLogin userLogin;
+
+   Body({Key key,this.userLogin
   }) : super(key: key);
 
   @override
@@ -25,13 +28,13 @@ class Body extends StatelessWidget {
               height: size.width * 0.3,
               decoration: BoxDecoration(
                   border: Border.all(width: 2, color: Colors.grey)),
-              child: Image.asset('assets/images/avt.png'),
+              child: Image.network(userLogin.photoUrl),
             ),
           ),
           SizedBox(height: size.height * 0.01),
           Center(
             child: Text(
-              'Trần Trọng Tuấn',
+            userLogin.displayName,
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
           ),
@@ -105,7 +108,8 @@ class Body extends StatelessWidget {
           ),
           RoundedButton(
             text: 'Đăng Xuất',
-            press: () {
+            press: () async {
+              await signOutGoogle();
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return LoginScreen();
               }));

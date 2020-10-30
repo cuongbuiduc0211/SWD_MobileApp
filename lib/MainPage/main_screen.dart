@@ -1,22 +1,31 @@
 import 'package:flutter/material.dart';
 import 'package:mobileapp/InfoPage/info_screen.dart';
+import 'package:mobileapp/Models/user_login.dart';
 import 'package:mobileapp/PostTypePage/posttype_screen.dart';
 
 class MainScreen extends StatefulWidget {
+
+
+  UserLogin userLogin;
+
+  MainScreen({Key key,this.userLogin}) : super(key: key); 
+
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
 class _MainScreenState extends State<MainScreen> {
 
+
   int _currentIndex = 0;
-  final List<Widget> _children = [
-    PostTypeScreen(),
-    PostTypeScreen(),
-    InfoScreen()
-  ];
   @override
   Widget build(BuildContext context) {
+    
+  final List<Widget> _children = [
+    PostTypeScreen(userLogin: widget.userLogin,),
+    PostTypeScreen(userLogin: widget.userLogin,),
+    InfoScreen(userLogin: widget.userLogin,)
+  ];
     return Scaffold(
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
