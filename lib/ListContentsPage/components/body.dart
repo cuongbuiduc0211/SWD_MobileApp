@@ -206,7 +206,10 @@ class Body extends StatelessWidget {
                                                 child: Container(
                                                   child: FlatButton(
                                                     onPressed: () {
-                                                      return PostDetailScreen();
+                                                      Navigator.push(context,
+                                                          MaterialPageRoute(builder: (context) {
+                                                            return PostDetailScreen();
+                                                          }));
                                                     },
                                                     child: Text(
                                                       'Preview',
