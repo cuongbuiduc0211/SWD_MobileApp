@@ -10,7 +10,7 @@ class ListContentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Body(userLogin: userLogin,),
+      body: Body(),
     );
   }
 }
